@@ -1,5 +1,3 @@
-
-
 public class LongestSequence {
 	public int[] longestSequence(int input[])
 	{
