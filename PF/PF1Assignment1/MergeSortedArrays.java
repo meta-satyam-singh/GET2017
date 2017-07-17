@@ -25,7 +25,7 @@ class MergeSortedArrays
 			c[i++]	= b[k++];
 		}
 	 	RemoveDuplicates r = new RemoveDuplicates();
-		int result[] = .removeDuplicates(c);
+		int result[] = r.removeDuplicates(c);
 		return result;
 	}
 }
