@@ -12,7 +12,7 @@ public class TrianglePyramid {
 	}
 	private String returnSpaces(int n, int k){
 		String spaces = new String();
-		for(int i=n-k-1;i>0;i--){
+		for(int i=n-k-1; i>0; i--){
 			spaces +=" ";
 		}
 		return spaces;
