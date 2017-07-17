@@ -1,12 +1,7 @@
 
 import java.lang.*;
 public class OctalConversion {
-
-	public static void main(String[] args) {
-		int result = OctalConversion.convertBinaryToOctal(111101);
-
-	}
-	public static int convertBinaryToOctal(int binaryValue){
+	public int convertBinaryToOctal(int binaryValue){
 		int remainder = 0, octalValue = 0, j = 1, decimalValue = 0;
 		while(binaryValue!=0){
 			if(remainder!=0 && remainder!=1){
@@ -27,6 +22,4 @@ public class OctalConversion {
 		}
 		return octalValue;
 	}
-
 }
-
