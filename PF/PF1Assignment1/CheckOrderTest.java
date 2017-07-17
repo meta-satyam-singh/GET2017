@@ -27,5 +27,4 @@ public class CheckOrderTest {
 		int result = c.orderCheck(input);
 		assertEquals("no order", 0,result);
 	}
-
 }
