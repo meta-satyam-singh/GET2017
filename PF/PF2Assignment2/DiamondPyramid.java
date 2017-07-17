@@ -4,7 +4,7 @@ public class DiamondPyramid {
 		if(n<= 0)
 			return invalid;
 		String[] result = new String[2*n-1];
-		DiamondPyramid d=new DiamondPyramid();
+		DiamondPyramid d = new DiamondPyramid();
 		for(int i=0; i<n; i++){
 			result[i] = d.returnSpaces(n,i)+d.returnNumbers(n,i)+d.returnSpaces(n,i);
 			result[2*n-2-i] = result[i];
@@ -14,7 +14,7 @@ public class DiamondPyramid {
 	private  String returnSpaces(int n, int k){
 		String spaces = new String();
 		for(int i=0; i<n-k-1; i++){
-			spaces +=" ";
+			spaces += " ";
 		}
 		return spaces;
 	}
