@@ -23,19 +23,19 @@ public class JobScheduling {
 			for(int i = 0; i<arrival_time.length; i++){
 				for(int j=0; j<number_Of_Process; j++){
 					if(j == 0){
-						arr[i][j]=i+1;
+						arr[i][j] = i+1;
 					}
 					else if(j == 1){
-						arr[i][j]=arrival_time[i];
+						arr[i][j] = arrival_time[i];
 					}
 					else if(j == 2){
-						arr[i][j]=waiting_time[i];
+						arr[i][j] = waiting_time[i];
 					}
 					else if(j == 3){
-						arr[i][j]=job_starts_at[i];
+						arr[i][j] = job_starts_at[i];
 					}
 					else if(j == 4){
-						arr[i][j]=job_finished_at[i];
+						arr[i][j] = job_finished_at[i];
 					}
 				}
 			}
