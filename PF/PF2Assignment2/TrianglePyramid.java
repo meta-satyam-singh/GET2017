@@ -4,7 +4,7 @@ public class TrianglePyramid {
 		if(n<=0)
 			return invalid;
 		String[] result = new String[n];
-		TrianglePyramid t=new TrianglePyramid();
+		TrianglePyramid t = new TrianglePyramid();
 		for(int i=0;i<n;i++){
 			result[i] = t.returnSpaces(n,n-i-1)+t.returnNumbers(n,i);	
 		}
