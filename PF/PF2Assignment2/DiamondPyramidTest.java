@@ -19,8 +19,8 @@ public class DiamondPyramidTest {
 	@Test
 	public void testInvalidInput() {
 		String[] result = {"invalid input"};
-		DiamondPyramid d=new DiamondPyramid();
-		String[] expected=d.wholePyramid(-2);
+		DiamondPyramid d = new DiamondPyramid();
+		String[] expected = d.wholePyramid(-2);
 		assertArrayEquals(expected,result);
 	}
 }
