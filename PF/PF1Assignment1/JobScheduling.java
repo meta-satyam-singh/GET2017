@@ -1,5 +1,5 @@
 public class JobScheduling {
-	public static int[][] calculateWaitingTime(int arrival_time[], int job_size[]){
+	public int[][] calculateWaitingTime(int arrival_time[], int job_size[]){
 			int number_Of_Process = 5;
 			int job_starts_at[] = new int[arrival_time.length];
 			int waiting_time[] = new int[arrival_time.length];
