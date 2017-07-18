@@ -1,11 +1,7 @@
 package PF3;
-
 import static org.junit.Assert.*;
-
 import org.junit.Test;
-
-public class RecursiveTest {
-	
+public class RecursiveTest {	
 	// test for perfect divisible
 	@Test
 	public void testRem1() {
@@ -14,8 +10,7 @@ public class RecursiveTest {
 		int expected = 0;
 		int result = Recursive.rem(input1,input2);
 		assertEquals(expected,result);
-	}
-	
+	}	
 	// test for divisor equals to 0
 	@Test
 	public void testRem2() {
@@ -25,7 +20,6 @@ public class RecursiveTest {
 		int result = Recursive.rem(input1,input2);
 		assertEquals(expected,result);
 	}
-	
 	// test for not perfectly divisible
 	@Test
 	public void testRem3() {
@@ -35,8 +29,6 @@ public class RecursiveTest {
 		int result = Recursive.rem(input1,input2);
 		assertEquals(expected,result);
 	}
-	
-	
 	@Test
 	public void testGcd1() {
 		int input1 = 2;
@@ -45,7 +37,6 @@ public class RecursiveTest {
 		int result = Recursive.gcd(input1,input2);
 		assertEquals(expected,result);
 	}
-
 	@Test
 	public void testGcd2() {
 		int input1 = 12;
@@ -54,7 +45,6 @@ public class RecursiveTest {
 		int result = Recursive.gcd(input1,input2);
 		assertEquals(expected,result);
 	}
-	
 	@Test
 	public void testGcd3() {
 		int input1 = 100;
@@ -63,7 +53,6 @@ public class RecursiveTest {
 		int result = Recursive.gcd(input1,input2);
 		assertEquals(expected,result);
 	}
-	
 	// test for single digit
 	@Test
 	public void testlargestDigit1() {
@@ -72,7 +61,6 @@ public class RecursiveTest {
 		int result = Recursive.largestDigit(input);
 		assertEquals(expected,result);
 	}
-	
 	// test for larger digit
 	@Test
 	public void testLargestDigit2() {
@@ -81,7 +69,6 @@ public class RecursiveTest {
 		int result = Recursive.largestDigit(input);
 		assertEquals(expected,result);
 	}
-	
 	// test for same digits
 	@Test
 	public void testlargestDigit3() {
@@ -90,6 +77,4 @@ public class RecursiveTest {
 		int result = Recursive.largestDigit(input);
 		assertEquals(expected,result);
 	}
-	
-
 }
