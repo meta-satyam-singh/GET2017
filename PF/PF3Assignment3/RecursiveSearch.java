@@ -1,7 +1,5 @@
 package PF3;
-
 public class RecursiveSearch {
-	
 	// takes array, number to search and index as argument and returns boolean
 	public boolean linearSearch(int arr[], int num, int i){
 		
@@ -13,7 +11,6 @@ public class RecursiveSearch {
 		else 
 			return linearSearch(arr, num,i+1);
 	}
-	
 	/* takes array and it's leftmost and rightmost index and the
 	 *  number to search as argument and returns boolean
 	 */
