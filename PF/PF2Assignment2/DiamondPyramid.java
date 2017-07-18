@@ -1,4 +1,3 @@
-
 public class DiamondPyramid {
 	public static void main(String args[]){
 		String[] result =DiamondPyramid.wholePyramid(1);
