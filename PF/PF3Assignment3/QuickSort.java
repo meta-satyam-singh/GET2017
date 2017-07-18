@@ -1,10 +1,11 @@
 package PF3;
-
 public class QuickSort {
-	public int partition(int arr[], int low, int high){
+	public int partition(int arr[], int low, int high)
+	{
 		int pivot = arr[high]; 
 		int i = (low-1); 
-		for (int j=low; j<high; j++){
+		for (int j=low; j<high; j++)
+		{
 			if (arr[j] <= pivot)
 			{
 				i++;
@@ -17,14 +18,15 @@ public class QuickSort {
 		arr[i+1] = arr[high];
 		arr[high] = temp;
 		return i+1;
- } 
-	 public int[] sort(int arr[], int low, int high){
+	} 
+	public int[] sort(int arr[], int low, int high)
+	{
 		if (low < high)
 		{
 	        int pi = partition(arr, low, high);
 	        sort(arr, low, pi-1);
 	        sort(arr, pi+1, high);
-	    }	
+	    	}	
 		return arr;
- }
+ 	}
 }
