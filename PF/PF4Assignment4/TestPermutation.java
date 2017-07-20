@@ -6,6 +6,7 @@ import java.util.Arrays;
 import org.junit.Test;
 public class TestPermutation
 {
+	//Test forn ABCD 
 	@Test
 	public void testForABCD() 
 	{
@@ -17,6 +18,7 @@ public class TestPermutation
 				"DCBA", "DACB", "DABC", "DBAC", "DBCA", "ADBC", "ADCB"));
 		assertEquals(expected, output);
 	}
+	//Test forn ABC 
 	@Test
 	public void testForABC() 
 	{
