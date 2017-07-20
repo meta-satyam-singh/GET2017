@@ -7,7 +7,7 @@ public class Recursive {
 		System.out.println(k.largestDigit(2));
 	}
 	// takes dividend and divisor and returns remainder
-	public static int rem(int dividend, int divisor){
+	public  int rem(int dividend, int divisor){
 		if(divisor == 0)
 			return -1;
 		if(dividend == 0)
@@ -18,7 +18,7 @@ public class Recursive {
 		return rem(k,divisor);
 	}
 	//takes two numbers as argument and returns their gcd
-	public static int gcd ( int x , int y )
+	public  int gcd ( int x , int y )
 	{
 	    if ( y == 0 )                        
 	        return x;
@@ -27,7 +27,7 @@ public class Recursive {
 	    else return gcd ( y , x );        // if x < y then go ahead and switch them around.
 	}
 	// takes number as argument and returns largest digit
-	public static int largestDigit(int num){
+	public  int largestDigit(int num){
 		if(num<10) return num;
 		int k=num%10;
 		num=num/10;
