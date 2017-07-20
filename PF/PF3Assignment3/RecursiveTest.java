@@ -4,29 +4,29 @@ import org.junit.Test;
 public class RecursiveTest {	
 	// test for perfect divisible
 	@Test
-	public void testRem1() {
+	public void testForPerfectDivisible() {
 		int input1 = 2;
 		int input2 = 1;
 		int expected = 0;
-		int result = Recursive.rem(input1,input2);
+		int result = new Recursive().rem(input1,input2);
 		assertEquals(expected,result);
 	}	
 	// test for divisor equals to 0
 	@Test
-	public void testRem2() {
+	public void testRemForIllegalDivisor() {
 		int input1 = 2;
 		int input2 = 0;
 		int expected = -1;
-		int result = Recursive.rem(input1,input2);
+		int result = new Recursive().rem(input1,input2);
 		assertEquals(expected,result);
 	}
 	// test for not perfectly divisible
 	@Test
-	public void testRem3() {
+	public void testForNotPerfectlyDivisible() {
 		int input1 = 100;
 		int input2 = 3;
 		int expected = 1;
-		int result = Recursive.rem(input1,input2);
+		int result = new Recursive().rem(input1,input2);
 		assertEquals(expected,result);
 	}
 	@Test
@@ -34,7 +34,7 @@ public class RecursiveTest {
 		int input1 = 2;
 		int input2 = 1;
 		int expected = 1;
-		int result = Recursive.gcd(input1,input2);
+		int result = new Recursive().gcd(input1,input2);
 		assertEquals(expected,result);
 	}
 	@Test
@@ -42,7 +42,7 @@ public class RecursiveTest {
 		int input1 = 12;
 		int input2 = 18;
 		int expected = 6;
-		int result = Recursive.gcd(input1,input2);
+		int result = new Recursive().gcd(input1,input2);
 		assertEquals(expected,result);
 	}
 	@Test
@@ -50,7 +50,7 @@ public class RecursiveTest {
 		int input1 = 100;
 		int input2 = 3;
 		int expected = 1;
-		int result = Recursive.gcd(input1,input2);
+		int result = new Recursive().gcd(input1,input2);
 		assertEquals(expected,result);
 	}
 	// test for single digit
@@ -58,7 +58,7 @@ public class RecursiveTest {
 	public void testlargestDigit1() {
 		int input = 2;
 		int expected = 2;
-		int result = Recursive.largestDigit(input);
+		int result = new Recursive().largestDigit(input);
 		assertEquals(expected,result);
 	}
 	// test for larger digit
@@ -66,7 +66,7 @@ public class RecursiveTest {
 	public void testLargestDigit2() {
 		int input = 1257369;
 		int expected = 9;
-		int result = Recursive.largestDigit(input);
+		int result = new Recursive().largestDigit(input);
 		assertEquals(expected,result);
 	}
 	// test for same digits
@@ -74,7 +74,7 @@ public class RecursiveTest {
 	public void testlargestDigit3() {
 		int input = 444;
 		int expected = 4;
-		int result = Recursive.largestDigit(input);
+		int result = new Recursive().largestDigit(input);
 		assertEquals(expected,result);
 	}
 }
