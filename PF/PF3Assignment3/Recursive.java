@@ -1,21 +1,23 @@
 package PF3;
 public class Recursive {
 	public static void main(String[] args) {
-		Recursive k=new Recursive();
-		System.out.println(k.rem(5, 2));
-		System.out.println(k.gcd(1,2));
-		System.out.println(k.largestDigit(2));
+		Recursive objForRec = new Recursive();
+		System.out.println(objForRec.rem(5, 2));
+		System.out.println(objForRec.gcd(1,2));
+		System.out.println(objForRec.largestDigit(2));
 	}
 	// takes dividend and divisor and returns remainder
 	public  int rem(int dividend, int divisor){
+		if(dividend < 0 && divisor < 0)
+			return -1;
 		if(divisor == 0)
 			return -1;
 		if(dividend == 0)
 			return 0;
-		int k= dividend-divisor;
-		if(k<divisor)
-			return k;
-		return rem(k,divisor);
+		int subtractedValue = dividend-divisor;
+		if(subtractedValue<divisor)
+			return subtractedValue;
+		return rem(subtractedValue,divisor);
 	}
 	//takes two numbers as argument and returns their gcd
 	public  int gcd ( int x , int y )
