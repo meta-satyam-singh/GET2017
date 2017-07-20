@@ -5,7 +5,7 @@ public class NQueenProblemTest
 {
 	NQueenProblem nqueen = new NQueenProblem();
 	@Test
-	public void testNQueenFor3d() 
+	public void testNQueenFor4x4() 
 	{
 		int[][] board = {{0, 0, 0, 0},{0, 0, 0, 0},{0, 0, 0, 0},
 	            			{0, 0, 0, 0},{0, 0, 0, 0} };
@@ -14,7 +14,7 @@ public class NQueenProblemTest
 		assertEquals(expected, result);
 	}
 	@Test
-	public void testNQueenFor2d() 
+	public void testNQueenFor2x2() 
 	{
 		int[][] board = {{0, 0},{0, 0} };
 		boolean result = nqueen.nQueen(board, 0, 2);
