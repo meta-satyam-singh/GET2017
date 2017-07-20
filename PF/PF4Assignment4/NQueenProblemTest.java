@@ -3,13 +3,13 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 public class NQueenProblemTest 
 {
-	NQueenProblem nq = new NQueenProblem();
+	NQueenProblem nqueen = new NQueenProblem();
 	@Test
 	public void testNQueenFor3d() 
 	{
 		int[][] board = {{0, 0, 0, 0},{0, 0, 0, 0},{0, 0, 0, 0},
 	            			{0, 0, 0, 0},{0, 0, 0, 0} };
-		boolean result = nq.nQueen(board, 0, 4);
+		boolean result = nqueen.nQueen(board, 0, 4);
 		boolean expected = true;
 		assertEquals(expected, result);
 	}
@@ -17,7 +17,7 @@ public class NQueenProblemTest
 	public void testNQueenFor2d() 
 	{
 		int[][] board = {{0, 0},{0, 0} };
-		boolean result = nq.nQueen(board, 0, 2);
+		boolean result = nqueen.nQueen(board, 0, 2);
 		boolean expected = false;
 		assertEquals(expected, result);
 	}

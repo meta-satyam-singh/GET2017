@@ -10,7 +10,7 @@ public class TestPermutation
 	public void testForABCD() 
 	{
 		String input = "ABCD";
-		List<String> output = new Permutation.generatePermutations(input);
+		List<String> output = new Permutation().generatePermutations(input);
 		List<String> expected = new ArrayList<String>(Arrays.asList("ABCD",
 				"ABDC", "ACBD", "ACDB", "BACD", "BADC", "BCAD", "BCDA", "BDCA",
 				"BDAC", "CBDA", "CBAD", "CDBA", "CDAB", "CADB", "CABD", "DCAB",
@@ -21,7 +21,7 @@ public class TestPermutation
 	public void testForABC() 
 	{
 		String input = "ABC";
-		List<String> output = new Permutation.generatePermutations(input);
+		List<String> output = new Permutation().generatePermutations(input);
 		List<String> expected = new ArrayList<String>(Arrays.asList("ABC","ACB", "BAC", "BCA", "CBA", "CAB"));
 		assertEquals(expected, output);
 	}

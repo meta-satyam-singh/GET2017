@@ -1,8 +1,6 @@
 package pf4;
-
 import java.util.ArrayList;
 import java.util.List;
-
 public class Permutation 
 {
 	// This Function gets all the combination of a given String input
@@ -10,16 +8,12 @@ public class Permutation
 	public List<String> getPermutations(String input, List<String> outputList)
 	{
 		if (outputList.contains(input)) 
-		{
 			return outputList; 
-		} 
 		else 
-		{
 			outputList.add(input);
-		}
 		String combination = "";
 		int inputLength = input.length();
-		String lastCharacter = "" + (input.charAt(inputLength - 1));
+		String lastCharacter =new Character( input.charAt(inputLength - 1)).toString();
 		// Picking the last element of string placing it to different locations. 
 		for (int index = inputLength - 2; index >= 0; index--) 
 		{

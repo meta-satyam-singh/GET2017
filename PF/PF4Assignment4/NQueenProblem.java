@@ -2,23 +2,6 @@ package pf4;
 
 public class NQueenProblem
 {
-    // function to print solution 
-    public static void main(String args[])
-    {
-    	NQueenProblem nq = new NQueenProblem();
-    	int[][] board = {{0, 0, 0, 0},{0, 0, 0, 0},{0, 0, 0, 0},
-    			{0, 0, 0, 0},{0, 0, 0, 0} };
-    	int dim = 4;
-    	boolean result = nq.nQueen(board,0,dim);
-    	System.out.println(result);
-        for (int i = 0; i < dim; i++)
-        {
-            for (int j = 0; j < dim; j++)
-                System.out.print(" " + board[i][j]
-                                 + " ");
-            System.out.println();
-        }
-    }
     // Function to check if position is safe 
     boolean isSafe(int board[][], int row, int col, int dim)
     {
