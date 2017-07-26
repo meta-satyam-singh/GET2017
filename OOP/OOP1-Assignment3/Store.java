@@ -4,8 +4,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Store {
-
+public class Store 
+{
 	private ReadFile readFileProduct, readFileProductPromotion,
 			readFileOrderPromotion;
 	private String[] product;		// string array for all the products
@@ -20,16 +20,16 @@ public class Store {
 	static Product[] productObj;
 	static OrderPromotion[] orderObj;
 	ArrayList<String> report = new ArrayList<String>(); // array list to create the report
-	
 		
 	// do nothing constructor
-	public Store() {
+	public Store() 
+	{
 
 	}
 	
 	// constructor initializing product and promotions file
-	public Store(String productPath, String productPromotionPath,
-			String orderPromotionPath) {
+	public Store(String productPath, String productPromotionPath, String orderPromotionPath) 
+	{
 		readFileProduct = new ReadFile(productPath);
 		readFileProductPromotion = new ReadFile(productPromotionPath);
 		readFileOrderPromotion = new ReadFile(orderPromotionPath);
@@ -38,14 +38,17 @@ public class Store {
 	}
 	
 	// displays details from product and promotions and files
-	private void displayDetails() {
-		try {
+	private void displayDetails() 
+	{
+		try 
+		{
 			System.out.println("List of Products");
 			product = readFileProduct.readLines(); // gets all the lines from the file
 			productObj = new Product[product.length];
 			
 			// splits and stores in product array
-			for (int i = 0; i < product.length; i++) {
+			for (int i = 0; i < product.length; i++) 
+			{
 				productObj[i] = new Product();
 				System.out.println(product[i]);
 				String[] temp = product[i].split(",");	// splits by ','
@@ -58,7 +61,8 @@ public class Store {
 			productPromoObj = new ProductPromotion[productPromo.length];
 			
 			// splits and stores in product prom array
-			for (int i = 0; i < productPromo.length; i++) {
+			for (int i = 0; i < productPromo.length; i++) 
+			{
 				productPromoObj[i] = new ProductPromotion();
 				System.out.println(productPromo[i]);
 				String[] temp = productPromo[i].split(",");
@@ -70,7 +74,8 @@ public class Store {
 			System.out.println("Order Promotion");
 			orderPromo = readFileOrderPromotion.readLines();	// geta all lines from order prom file
 			orderObj = new OrderPromotion[orderPromo.length];
-			for (int i = 0; i < orderPromo.length; i++) {
+			for (int i = 0; i < orderPromo.length; i++) 
+			{
 				orderObj[i] = new OrderPromotion();
 				System.out.println(orderPromo[i]);
 				String[] temp = orderPromo[i].split(",");
@@ -79,16 +84,21 @@ public class Store {
 				orderObj[i].setThreshold(temp[2]);
 			}
 
-		} catch (IOException e) {
+		} 
+		catch (IOException e) 
+		{
 			e.printStackTrace();
 		}
 	}
 	
 	// calculates total price of products and takes code and quantity entered by user
-	public String calculatePrice(int quantity, String code) {
+	public String calculatePrice(int quantity, String code) 
+	{
 		// checks in all the products
-		for (int i = 0; i < productObj.length; i++) {
-			if (productObj[i].getProductCode().equalsIgnoreCase(code)) {
+		for (int i = 0; i < productObj.length; i++) 
+		{
+			if (productObj[i].getProductCode().equalsIgnoreCase(code)) 
+			{
 				float price = Float.parseFloat(productObj[i].getPrice());
 				float amount = quantity * price;			// calculate the net amount for each prod.
 				subTotal += amount;							// add that amount to subtotal
@@ -99,9 +109,11 @@ public class Store {
 	}
 	
 	// adds the order of user to the report
-	public void createPurchaseReport() {
+	public void createPurchaseReport() 
+	{
 		// for all objects in the cart
-		for (int i = 0; i < cart.length; i++) {
+		for (int i = 0; i < cart.length; i++) 
+		{
 			report.add("PRODUCTS : " + cart[i].getCode() + " - "+ productName(cart[i].getCode()));  // add product to the report
 			report.add("COST : "+ calculatePrice(cart[i].getQuantity(),cart[i].getCode()) + "\n");  // add net amount of that product
 			report.add("\n");
@@ -111,32 +123,35 @@ public class Store {
 	}
 
 	// returns product name corresponding to the code
-	public String productName(String code) {
-		for (int i = 0; i < productObj.length; i++) {
-			if (productObj[i].getProductCode().equalsIgnoreCase(code)) {
+	public String productName(String code) 
+	{
+		for (int i = 0; i < productObj.length; i++) 
+		{
+			if (productObj[i].getProductCode().equalsIgnoreCase(code)) 
 				return productObj[i].getProductName();
-			}
 		}
 		return null;
 	}
 	
 	// returns product price corresponding to the code
-	public float productPrice(String code) {
-		for (int i = 0; i < productObj.length; i++) {
-			if (productObj[i].getProductCode().equalsIgnoreCase(code)) {
-				return Float.parseFloat(productObj[i].getPrice());
-			}
+	public float productPrice(String code) 
+	{
+		for (int i = 0; i < productObj.length; i++) 
+		{
+			if (productObj[i].getProductCode().equalsIgnoreCase(code)) 
+				return Float.parseFloat(productObj[i].getPrice())
 		}
 		return -1;
 	}
 	// adds the amount to the total discount
-	public void totalDiscount(float amount) {
+	public void totalDiscount(float amount) 
+	{
 		totalDiscount += amount;
-
 	}
 
 	// method to take input from user and create order
-	public void createOrder() {
+	public void createOrder() 
+	{
 		scan = new Scanner(System.in);
 		System.out.println("Enter number of Products you wanna buy");
 		numOfProd = scan.nextInt();
@@ -144,36 +159,45 @@ public class Store {
 		cart = new Cart[numOfProd];			//array of cart of size equal to no. of products
 		
 		// scans input from user and create obj of type cart
-		for (int i = 0; i < numOfProd; i++) {
+		for (int i = 0; i < numOfProd; i++) 
+		{
 			cart[i] = new Cart();
-			do {
+			do 
+			{
 				System.out.println("Enter Product Code " + (i + 1) + " :");
 				String code = scan.nextLine();
 				
 				//validates if code is present in list of products
-				if (new Validation().validateCode(code, productObj)) {
+				if (new Validation().validateCode(code, productObj)) 
+				{
 					cart[i].setCode(code);
 					break;
-				} else
+				} 
+				else
 					System.out.println("Enter Valid Code ");
-			} while (true);
-			do {
+			}
+			while (true);
+			do
+			{
 				System.out.println("Enter Quantity of " + cart[i].getCode()+ " :");
 				String checkQuantity = scan.nextLine();
 				
 				// validates if given quantity is number
 				int quantity = new Validation()
 						.validateAnswerNumber(checkQuantity);
-				if (quantity > 0) {
+				if (quantity > 0) 
+				{
 					cart[i].setQuantity(quantity);
 					break;
 				}
-			} while (true);
+			} 
+			while (true);
 		}
 	}
 
 	
-	public void fillReport() {
+	public void fillReport() 
+	{
 		report.add("##################################################### ");
 		report.add("\n");
 		report.add("YOUR ORDER :");
@@ -183,7 +207,6 @@ public class Store {
 		createOrder();
 		createPurchaseReport();
 		float sub_total = subTotal;
-		
 		subTotal -= totalDiscount;
 		float oderLevelDiscount = new OrderPromotion().orderDiscount(orderObj,subTotal,report);
 		report.add("Subtotal = " + sub_total);		// adds total without discount
@@ -193,14 +216,14 @@ public class Store {
 		report.add("TotalDiscount = " + totalDiscount);	// adds total discount
 		float total = sub_total - totalDiscount;
 		report.add("Total = " + total);
-		for (int i = 0; i < report.size(); i++) {
+		for (int i = 0; i < report.size(); i++)
 			System.out.println(report.get(i));
-		}
 		CreateReport createReport = new CreateReport("local_resources/Report.txt");		// creates report
 		createReport.saveResult(report);
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
 		
 		Store store = new Store("local_resources/ProductList.csv", "local_resources/ProductPromo.csv",				
 				"local_resources/OrderPromo.csv");
