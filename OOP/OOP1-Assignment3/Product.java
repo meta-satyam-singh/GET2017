@@ -1,27 +1,34 @@
 package oop3;
 
-public class Product {
+public class Product 
+{
 	
 	private String productCode;
 	private String productName;
 	private String price;
 
-	public String getProductCode() {
+	public String getProductCode() 
+	{
 		return productCode;
 	}
-	public void setProductCode(String productCode) {
+	public void setProductCode(String productCode) 
+	{
 		this.productCode = productCode;
 	}
-	public String getProductName() {
+	public String getProductName() 
+	{
 		return productName;
 	}
-	public void setProductName(String productName) {
+	public void setProductName(String productName) 
+	{
 		this.productName = productName;
 	}
-	public String getPrice() {
+	public String getPrice() 
+	{
 		return price;
 	}
-	public void setPrice(String price) {
+	public void setPrice(String price) 
+	{
 		this.price = price;
 	}
 }
