@@ -199,9 +199,7 @@ public class Store
 	public void fillReport() 
 	{
 		report.add("##################################################### ");
-		report.add("\n");
 		report.add("YOUR ORDER :");
-		report.add("\n");
 		report.add("#####################################################");
 		report.add("\n");
 		createOrder();
