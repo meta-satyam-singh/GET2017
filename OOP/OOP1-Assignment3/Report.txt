@@ -1,0 +1,32 @@
+##################################################### 
+YOUR ORDER :
+#####################################################
+
+
+PRODUCTS : 1001 - Reebok Sneaker
+COST : 2247.0( 3 x 749.0 )
+
+
+
+PRODUCTS : 2005 - Mufti T-Shirt (Black)
+COST : 1050.0( 1 x 1050.0 )
+
+
+
+Promotion :100.00 off on Reebok Sneaker[ code:1001 ]Mufti T-Shirt (Black)[ code:2005 ]
+Discount :300.0
+
+
+Promotion :100.00 off on Reebok Sneaker[ code:1001 ]Mufti T-Shirt (Black)[ code:2005 ]
+Discount :100.0
+
+
+Promotion :10% off on orders above 1500.00
+Discount : 289.7
+
+
+Subtotal = 3297.0
+Product Level Discount = 400.0
+Order Level Discount = 289.7
+TotalDiscount = 689.7
+Total = 2607.3
