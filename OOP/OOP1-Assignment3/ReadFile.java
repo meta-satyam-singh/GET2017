@@ -7,41 +7,45 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReadFile {
+public class ReadFile 
+{
 	private String path; // path for the file to read
 	private BufferedReader reader;
 	List<String> lines = new ArrayList<String>();
 
-	public ReadFile(String path) {
+	public ReadFile(String path) 
+	{
 		this.path = path;
 	}
 
 	// method to open file for reading
-	private void openFile() throws FileNotFoundException {
+	private void openFile() throws FileNotFoundException
+	{
 
 		reader = new BufferedReader(new FileReader(path));
 	}
 
 	// method to read all the lines present in the file
-	public String[] readLines() throws IOException {
+	public String[] readLines() throws IOException 
+	{
 
-		try {
+		try 
+		{
 			openFile();
 			String singleline;
-			while ((singleline = reader.readLine()) != null) { // loop to read
-																// lines from
-																// the file
+			while ((singleline = reader.readLine()) != null) { // loop to read lines from the file
 				lines.add(singleline);
-			}
 
-		} catch (IOException e) {
+		} 
+		catch (IOException e) 
+		{
 			e.printStackTrace();
 		}
 
-		finally {
+		finally 
+		{
 			reader.close();
 		}
 		return lines.toArray(new String[lines.size()]);
-
 	}
 }
