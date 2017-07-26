@@ -139,7 +139,7 @@ public class Store
 		for (int i = 0; i < productObj.length; i++) 
 		{
 			if (productObj[i].getProductCode().equalsIgnoreCase(code)) 
-				return Float.parseFloat(productObj[i].getPrice())
+				return Float.parseFloat(productObj[i].getPrice());
 		}
 		return -1;
 	}
