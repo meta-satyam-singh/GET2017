@@ -17,13 +17,10 @@ public class Validation
 		}
 		
 		//if the answer is a numeric return the answer else null
-		if(result) {
+		if(result) 
 			return Integer.parseInt(answer);
-		} 
 		else 
-		{
 			return -1;
-		}
 	}
 	
 	// checks if product code is valid
@@ -33,9 +30,7 @@ public class Validation
 		for(int i=0 ; i<product.length ;i++)
 		{
 			if(code.equals(product[i].getProductCode()))
-			{
 				return true;
-			}
 		} 
 		return false;
 	}
