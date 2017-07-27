@@ -12,45 +12,50 @@ public class CompositeMenuItem extends Menu{
 		menu = new ArrayList<Menu>();
 	}
 	
-	public CompositeMenuItem(String name) {
+	public CompositeMenuItem(String name) 
+	{
 		this.menuName = name;
 		menu = new ArrayList<Menu>();
 	}
 	
-	public CompositeMenuItem(String name, Menu[] menuItems) {
+	public CompositeMenuItem(String name, Menu[] menuItems) 
+	{
 		this.menuName = name;
 		menu = new ArrayList<Menu>();
-		for(int i=0; i < menuItems.length; i++) {
+		for(int i=0; i < menuItems.length; i++) 
 			menu.add(menuItems[i]);
-		}
 	}
 	
 	@Override
-	public void setName(String name) {
+	public void setName(String name) 
+	{
 		this.menuName = name;
 	}
 
 	@Override
-	public String getName() {
+	public String getName() 
+	{
 		return menuName;
 	}
 
 
 	@Override
-	public void actionTaken() {
+	public void actionTaken() 
+	{
 		// TODO Auto-generated method stub
 		int choice = 0;		//to get the menu choice from the user
 		Scanner scan = new Scanner(System.in);
-		do {
+		do
+		{
 			System.out.println("\n\n"+menuName+"\n");
 			//loop to print the menu item list
-			for(int i = 1; i <= menu.size(); i++) {
+			for(int i = 1; i <= menu.size(); i++)
 				System.out.println(i+". "+menu.get(i-1).getName());
-			}
 			
 			//Getting the menu choice from user
 			System.out.println("Enter choice :");
-			try {
+			try 
+			{
 			choice = scan.nextInt();
 			scan.nextLine();
 			} 
@@ -60,16 +65,14 @@ public class CompositeMenuItem extends Menu{
 			}
 			
 			//check if the menu number input is correct or not
-			if((choice < 1) || (choice > menu.size())) {
+			if((choice < 1) || (choice > menu.size())) 
 				break;
-			} else {
+			else 
 				menu.get(choice-1).actionTaken();
-			}
 			
 			//checking for the back condition
-			if(choice == menu.size()) {
+			if(choice == menu.size()) 
 				return;
-			}
 		} while(true);
 	}
 
