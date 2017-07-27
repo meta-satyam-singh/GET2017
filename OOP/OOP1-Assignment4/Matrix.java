@@ -47,7 +47,7 @@ public class Matrix {
 		{
 			System.out.println(inputMessage);
 			inputNumber = Integer.parseInt(br.readLine());
-			if(inputNumber <= 0)
+			if(inputNumber <= 0 && !negative_allowed)
 				inputNumber = getPositiveIntegerInput(inputMessage, negative_allowed);
 
 		}
