@@ -57,8 +57,8 @@ public class CompositeMenuItem extends Menu{
 			System.out.println("Enter choice :");
 			try 
 			{
-			choice = scan.nextInt();
-			scan.nextLine();
+				choice = scan.nextInt();
+				scan.nextLine();
 			} 
 			catch (Exception e) 
 			{
