@@ -8,7 +8,8 @@ public class CompositeMenuItem extends Menu{
 	private String menuName;	//Menu name
 	private List<Menu> menu;	//To store all the menu items for a composite menu
 	
-	public CompositeMenuItem() {
+	public CompositeMenuItem() 
+	{
 		menu = new ArrayList<Menu>();
 	}
 	
