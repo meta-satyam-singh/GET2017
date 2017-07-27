@@ -14,7 +14,8 @@ public class MenuMultiplyMatrix extends Menu {
 		Matrix matrix = new Matrix();
 		int[][] firstMatrix ;
 		int[][] secondMatrix ;
-		do{
+		do
+		{
 			firstMatrix = matrix.createMatrix();
 			secondMatrix = matrix.createMatrix();
 			if(firstMatrix.length != secondMatrix[0].length)
