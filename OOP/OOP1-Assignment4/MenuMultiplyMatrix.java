@@ -18,7 +18,7 @@ public class MenuMultiplyMatrix extends Menu {
 		{
 			firstMatrix = matrix.createMatrix();
 			secondMatrix = matrix.createMatrix();
-			if(firstMatrix.length != secondMatrix[0].length)
+			if(firstMatrix[0].length != secondMatrix.length)
 				System.out.println("Columns of 1 should be equal to rows of 2");
 			else
 				break;
