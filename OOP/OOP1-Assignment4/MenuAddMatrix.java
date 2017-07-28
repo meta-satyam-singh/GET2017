@@ -18,7 +18,7 @@ public class MenuAddMatrix extends Menu {
 		{
 			firstMatrix = matrix.createMatrix();
 			secondMatrix = matrix.createMatrix();
-			if((firstMatrix[0].length != secondMatrix[0].length) && (firstMatrix.length != secondMatrix.length))
+			if((firstMatrix[0].length != secondMatrix[0].length) || (firstMatrix.length != secondMatrix.length))
 				System.out.println("dimensions of 1 should be equal to dimensions of 2");
 			else
 				break;
