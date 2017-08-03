@@ -1,0 +1,14 @@
+<svg version = "1.1" xmlns="http://www.w3.org/2000/svg"> 
+      <clipPath id="cut-off-right">
+          <rect x="0" y="0" width="90" height="180" />
+      </clipPath>
+
+      <circle cx="90" cy="90" r="90" clip-path="url(#cut-off-right)" style="fill:#3193D1" />
+	  
+	  <clipPath id="cut-off-left">
+          <rect x="90" y="0" width="180" height="180" />
+      </clipPath>
+
+     <circle fill="gray" cx="90" cy="90" r="90" clip-path="url(#cut-off-left)"/>
+     <circle fill="white" cx="90" cy="90" r="75" clip-path="url(#cut-off-left)"/>
+</svg>
