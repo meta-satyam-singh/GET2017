@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact</title>
+	<script src="myScript.js"></script>
+<body>
+
+	<table width="80%" align="center">
+		<tr>
+			<td>
+				<img src="C:/Users/Satyam/Desktop/html/html5.png" alt="html5 logo" width="10%">
+			</td>
+			<td align="right">
+				<a onclick="redirect()">Home</a>
+				<a href="#">News</a>
+				<a href="#">Popular</a>
+				<a href="#">Sales</a>
+				<a href="Contacts.html">Contact</a>
+			</td>
+		</tr>
+	</table>
+	
+	<table width="100%" align="center">
+		<tr>
+			<td align="center">
+				<img src="C:/Users/Satyam/Desktop/html/contact.jpg" alt="html features" width="80%" align="center">
+			</td>
+		</tr>
+	</table>
+	<br /><br />
+	<form id="form1" name="form1" onsubmit="return validateForm();">
+		<table align="center">
+			<tr>
+				<td width="15">
+					Name :
+				</td>
+				<td>
+					<input type="text" name="name" id="name">
+				</td>
+			</tr>
+			<tr>
+				<td width="15">
+					Email :
+				</td>
+				<td>
+					<input type="text" name="email" id="email">
+				</td>
+			</tr>
+			<tr>
+				<td width="15">
+					City :
+				</td>
+				<td>
+					<select id="select" onchange="validateSelect()" value="">
+						<option selected disabled>Choose here</option>
+						<option>Jaipur</option>
+						<option>Jodhpur</option>
+						<option>Kota</option>
+						<option>Bikaner</option>
+						<option>Alwar</option>
+					</select>
+					<td>
+					<span id="City" style="visibility:hidden">
+						Your City :
+					</span>
+				</td>
+				<td>
+					<input type="text" name="textField" id="textField"  style="visibility:hidden" readonly>
+				</td>
+				</td>
+			</tr>
+			<tr>
+			</tr>
+			<tr>
+				<td width="15">
+					Organisation Name :
+				</td>
+				<td>
+					<input type="text" name="orgName" id="orgName">
+				</td>
+			</tr>
+			<tr>
+				<td width="15">
+					Contact Number :
+				</td>
+				<td>
+					<input type="text" name="contact" id="contact">
+				</td>
+			</tr>
+			<tr>
+				<td width="15">
+					Message :
+				</td>
+				<td>
+					<textarea rows="3" id="message"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td >
+					<button  type="submit" value="Submit"  >Submit</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+
+	<hr />
+	<p align="center">&copy;Copyright 2016-17 | All Rights Reserved | Metacube Training.</p>
+</body>
+</html>
