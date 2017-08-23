@@ -1,14 +1,19 @@
+
 package assignment_4;
+
 import java.util.NoSuchElementException;
 
 // class to implement doubly linked mergedList
 public class DoublyLinkedList<E> 
 {
+
 	// start node for linked mergedList
 	Node<E> startNode;
+
 	// set initial size to zero
 	int size = 0;
-	public boolean add(int index, E item)
+
+	public E add(int index, E item)
 	{
 		Node<E> newNode = new Node<E>(item) ; 
 		if(startNode == null)
@@ -18,17 +23,18 @@ public class DoublyLinkedList<E>
 			newNode.nextNode = null;
 			newNode.prevNode = null;
 		}
-
 		else if(index > size)
 		{
 			throw new IllegalArgumentException("Location is greater than size : "+
 					"location: "+index+","+"Size: "+size);
 		}
+
 		else if(index == 0  && startNode != null)
 		{
 			newNode.nextNode = startNode;
 			startNode.prevNode = newNode;
 			startNode = newNode;
+
 		}
 
 		else if(index == size )
@@ -60,15 +66,15 @@ public class DoublyLinkedList<E>
 			newNode.nextNode.prevNode = newNode;
 		}
 		size++;
-		return true;	
+		return (E)newNode.nodeValue;	
 	}
-
+	
 	public boolean remove(E value)
 	{
+		boolean flag = false;
 		if(startNode == null)
-		{
 			new IndexOutOfBoundsException("MergedList is empty");
-		}
+
 		else
 		{
 			Node<E> tempPrevNode = startNode;
@@ -77,49 +83,52 @@ public class DoublyLinkedList<E>
 			{
 				tempPrevNode = tempNextNode;
 				tempNextNode = tempNextNode.nextNode;
-
 			}
 
 			if(tempNextNode == null)
 			{
 				throw new NoSuchElementException("value not present in mergedList");
 			}
+
 			else if(tempNextNode == startNode)
 			{
 				startNode = tempNextNode.nextNode;
 				tempNextNode.nextNode.prevNode = startNode;
 				tempNextNode = null;
 				tempPrevNode = null;
+				flag = true;
 			}
 
 			else if(tempNextNode.nextNode == null)
 			{
 				tempPrevNode.nextNode = null;
 				tempNextNode = null;
+				flag = true;
 			}
 
 			else
 			{
 				tempPrevNode.nextNode = tempNextNode.nextNode;
 				tempNextNode.nextNode.prevNode = tempPrevNode;
+				flag = true;
 			}
 		}
-		size--;
-		return true;
-	}
 
+		size--;
+
+		return flag;
+
+	}
 	public boolean remove(int index)
 	{
+		boolean flag = false;
 		Node<E> tempPrevNode ;
 		Node<E> tempNextNode ;
 		if(startNode == null)
-		{
 			throw new IndexOutOfBoundsException("MergedList is empty");
-		}
+
 		else if(index > size - 1)
-		{
 			throw new IndexOutOfBoundsException("index: "+index + " size: "+size);
-		}
 
 		else if(index == 0)
 		{
@@ -129,9 +138,8 @@ public class DoublyLinkedList<E>
 			tempNextNode.nextNode.prevNode = startNode;
 			tempNextNode = null;
 			tempPrevNode = null;
+			flag = true;
 		}
-
-
 		else
 		{
 			tempPrevNode = startNode;
@@ -143,28 +151,29 @@ public class DoublyLinkedList<E>
 				tempNextNode = tempNextNode.nextNode;
 				position++;
 			}
+
 			if(index == size - 1)
 			{
 				tempPrevNode.nextNode = null;
 				tempNextNode = null;
 			}
+
 			else
 			{
 				tempPrevNode.nextNode = tempNextNode.nextNode;
 				tempNextNode.nextNode.prevNode = tempPrevNode;
 			}
+			flag = true;
 		}
 		size--;
-		return true;
-	}
+		return flag;
 
+	}
+	
 	public E get(int index)
 	{
 		if(startNode == null)
-		{
 			throw new IllegalArgumentException("MergedList is empty");
-		}
-
 		Node<E> tempNode = startNode;
 		int position = 0;
 		while(position != index)
@@ -174,21 +183,21 @@ public class DoublyLinkedList<E>
 		}
 		return tempNode.nodeValue;
 	}
-
+	
 	public void reverse()
 	{
 		Node<E> prevNode = null;
 		Node<E> currentNode = startNode;
 		while(currentNode != null)
-		{
-			Node<E> tempNode = currentNode;
-			currentNode = currentNode.nextNode;
-			tempNode.nextNode = prevNode;
+		{		
+			Node<E> tempNode = currentNode;			
+			currentNode = currentNode.nextNode;			
+			tempNode.nextNode = prevNode;		
 			prevNode = tempNode;
 		}
 		startNode = prevNode;
 	}
-
+	
 	public void print()
 	{
 		Node<E> tempNode = startNode;
@@ -198,6 +207,7 @@ public class DoublyLinkedList<E>
 			tempNode = tempNode.nextNode;
 		}
 	}
+
 	public int size()
 	{
 		return size;

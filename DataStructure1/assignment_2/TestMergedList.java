@@ -1,3 +1,4 @@
+
 package assignment_2;
 
 import static org.junit.Assert.*;
@@ -25,19 +26,26 @@ public class TestMergedList
 		actualMergedList = new ArrayList<Integer>();
 		// adding element in list 1
 		for(int i = 2 ; i <= 5 ; ++i)
+		{
 			arrayList1.add(i);
-		
+		}
 		// adding element in list 2
 		for(int i = 6; i <= 8 ; ++i)
+		{
 			arrayList2.add(i);
+		}
+		
 		// creating the expected list
 		for(int i = 2 ; i <= 8; ++i)
+		{
 			expectedMergedList.add(i);
+		}
 	}
 
 	@Test
 	public void testMergeList() 
 	{
+		
 		actualMergedList = mergedList.mergeList(arrayList1, arrayList2);
 		
 		assertEquals(expectedMergedList.getElement(0) , actualMergedList.getElement(0));

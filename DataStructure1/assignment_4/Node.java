@@ -1,4 +1,6 @@
+
 package assignment_4;
+
 // class of node (an entity of doubly linked mergedList)(Generic type)
 public class Node<E> 
 {
@@ -16,10 +18,10 @@ public class Node<E>
 	}
 	public Node(E item)
 	{
-		nodeValue = item;
-		nextNode = null;
+		nodeValue = item;		
+		nextNode = null;		
 		prevNode = null;
-	}
+	}	
 	@Override
 	public String toString() 
 	{

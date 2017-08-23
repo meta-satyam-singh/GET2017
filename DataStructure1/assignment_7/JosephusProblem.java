@@ -1,6 +1,10 @@
+
 package assignment_7;
+
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+
 import assignment_1.ArrayList;
 
 public class JosephusProblem 
@@ -10,8 +14,7 @@ public class JosephusProblem
 	public JosephusProblem()
 	{
 		bufferedReader  = new BufferedReader(new InputStreamReader(System.in));
-	}
-	
+	}	
 	public static void main(String[] args)
 	{
 		JosephusProblem josephusProblem = new JosephusProblem();
@@ -30,6 +33,7 @@ public class JosephusProblem
 		int person = 0;
 		// mergedList of people
 		ArrayList<Integer> people = new ArrayList<Integer>(n);
+		
 		// adding n people in mergedList
 		for(int i = 1;i <= n;i++)
 			people.add(i);
@@ -44,22 +48,24 @@ public class JosephusProblem
 			person = (person + k - 1) % people.size();
 			// printing the person
 			System.out.print(people.getElement(person) + " ");
+
 			// removing the person
 			people.remove(person);
 		}
 
 		System.out.println();
+		
 		// returning the winner
 		return people.getElement(0);
 	}
 	
 	public int getUserInput(String message)
-	{
+	{		
 		// variable for user input
-		int userInput = 0;
+		int userInput = 0;	
 		// exception handling for input
 		try
-		{
+		{		
 			// message to be printed
 			System.out.println(message);
 			// taking user input
@@ -70,7 +76,8 @@ public class JosephusProblem
 				getUserInput(message);
 			}
 
-		}catch(Exception ex)
+		}
+		catch(Exception ex)
 		{
 			System.out.println("Something went wrong: "+ex.getMessage());
 			// calling recursively the same method to take input again as it is not valid

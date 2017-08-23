@@ -1,3 +1,4 @@
+
 package assignment_3;
 
 import java.util.NoSuchElementException;
@@ -9,10 +10,9 @@ public class SinglyLinkedList<E>
 	Node<E> startNode;
 	// initial size set to zero
 	int size = 0;
-	
-	public boolean add(E item)
-	{
 
+	public E add(E item)
+	{
 		Node<E> newNode = new Node<E>(item);
 		if(startNode == null)
 		{
@@ -20,29 +20,26 @@ public class SinglyLinkedList<E>
 			newNode.nextNode = null;
 			size++;
 		}
-
 		else
 		{
-
 			Node<E> tempNode = startNode;
 			while(tempNode.nextNode != null)
+			{
 				tempNode = tempNode.nextNode;
+			}
 			tempNode.nextNode = newNode;
 			newNode.nextNode = null;
 		}
 		size++;
-		return true;
+		return (E)newNode.nodeValue;
 	}
 
-	public boolean add(int location, E item)
+	public E add(int location, E item)
 	{
-
 		// creating a new node to add and initializing its constructor with item
 		Node<E> newNode = new Node<E>(item) ; 
-		
 		// a temporary position
 		int tempPosition = 0;
-		
 		// if the mergedList is empty
 		if(startNode == null)
 		{
@@ -53,16 +50,14 @@ public class SinglyLinkedList<E>
 		// if the index is greater than size
 		else if(location-1 > size)
 		{
-
 			throw new IllegalArgumentException("Location is greater than size : "+
 					"location: "+location+","+"Size: "+size);
 		}
 
 		// to add node at a particular position
-		else{
-
+		else
+		{
 			Node<E> tempNode = startNode;
-
 			while(tempPosition != location-1)
 			{
 				tempNode = tempNode.nextNode;
@@ -71,18 +66,19 @@ public class SinglyLinkedList<E>
 			newNode.nextNode = tempNode.nextNode;
 			tempNode.nextNode = newNode;
 		}
-		size++;
-		return true;	
-	}
 
+		size++;
+		return (E)newNode.nodeValue;	
+	}
 	public boolean remove(E value)
 	{
-
+		boolean flag = false;
 		// if mergedList is empty
 		if(startNode == null)
 		{
 			throw new NoSuchElementException();
 		}
+
 		else
 		{
 			Node<E> tempPrevNode = startNode;
@@ -92,41 +88,41 @@ public class SinglyLinkedList<E>
 				tempPrevNode = tempCurrentNode;
 				tempCurrentNode = tempCurrentNode.nextNode;
 			}
-
 			if(tempCurrentNode == startNode)
 			{
 				startNode = tempCurrentNode.nextNode;
 				tempCurrentNode = null;
 				tempPrevNode = null;
+				flag = true;
 			}
 
 			else
 			{
 				tempPrevNode.nextNode = tempCurrentNode.nextNode;
 				tempCurrentNode = null;
+				flag = true;
 			}
 		}
 		size--;
-		return true;
+		return flag;
 
 	}
 
 	public boolean remove(int index)
 	{
+		boolean flag = false;
 		// temporary previous node
 		Node<E> tempPrevNode = startNode;
 		// temporary next node
 		Node<E> tempNextNode = startNode;
 		if(startNode == null)
-		{
 			throw new NoSuchElementException();
-		}
-
 		else if(index == 0)
 		{
 			startNode = tempNextNode.nextNode;
 			tempNextNode = null;
 			tempPrevNode = null;
+			flag = true;
 		}
 
 		else
@@ -142,12 +138,14 @@ public class SinglyLinkedList<E>
 
 			// put the address of next node into previous one 
 			tempPrevNode.nextNode = tempNextNode.nextNode;
-			
+
 			// set next node to null
 			tempNextNode = null;
+			flag = true;
 		}
 		size--;
-		return true;
+		return flag;
+
 	}
 
 	public void reverse()

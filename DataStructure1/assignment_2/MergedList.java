@@ -1,10 +1,11 @@
+
 package assignment_2;
 
 import assignment_1.ArrayList;
 
 // class MergedList to merge two lists 
 public class MergedList 
-{
+{	
 	public static void main(String[] args)
 	{
 		// object of mergedList 
@@ -16,8 +17,8 @@ public class MergedList
 			arrayList1.add(i);
 		// creating arraylist2 
 		ArrayList<Integer> arrayList2 = new ArrayList<Integer>();
-		// adding random elements in arraylist2 
 		
+		// adding random elements in arraylist2 
 		for(int i = 21 ;i <= 40 ;++i)
 			arrayList2.add(i);
 		
@@ -26,17 +27,14 @@ public class MergedList
 		
 		// printing merged mergedList
 		System.out.println("Merged MergedList: ");
-		
 		for(int i = 0 ;i < arrayList1.size() ;++i)
 			System.out.println(arrayList1.getIndex(i));
-		
 	}
 	
 	public ArrayList<Integer> mergeList(ArrayList<Integer> arrayList1 , ArrayList<Integer> arrayList2)
 	{
 		for(int i = 0; i < arrayList2.size() ;++i)
 			arrayList1.add(arrayList2.getElement(i));
-		
 		return arrayList1;
 	}
 
