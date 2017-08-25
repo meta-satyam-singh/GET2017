@@ -8,9 +8,6 @@ public class JabScheduling
 	static PriorityQueue pq = new PriorityQueue();
     public static void main(String[] args)
     {	
-        System.out.println("Priority Queue Test\n");   
- 
-        System.out.println("Enter size of priority queue ");
         boolean flag = true ;
         /*  Perform Priority Queue operations */
        
