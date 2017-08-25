@@ -51,15 +51,21 @@ class PriorityQueue
     public void insert(String job, int priority)
     {
         Task newJob = new Task(job, priority);
- 
-        heap[++heapSize] = newJob;
-        int pos = heapSize;
-        while (pos != 1 && newJob.priority > heap[pos/2].priority)
+        if(!isFull())
         {
-            heap[pos] = heap[pos/2];
-            pos /=2;
+            heap[++heapSize] = newJob;
+            int pos = heapSize;
+            while (pos != 1 && newJob.priority > heap[pos/2].priority)
+            {
+                heap[pos] = heap[pos/2];
+                pos /=2;
+            }
+            heap[pos] = newJob;
         }
-        heap[pos] = newJob;    
+        else
+        {
+            System.out.println("queue is full");
+        }
     }
     /** function to remove task **/
     public Task remove()
