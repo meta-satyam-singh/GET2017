@@ -42,7 +42,8 @@ public class TestSortedLinkedList
 	}
 	
 	@Test
-	public void testGet() {
+	public void testGet()
+	{
 		Integer input;
 		int[] expected = new int[] {2, 5, 7, 9};
 		for(int i=0; i < linkedList.size(); i++) 
