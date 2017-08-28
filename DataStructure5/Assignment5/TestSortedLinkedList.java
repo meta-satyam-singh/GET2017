@@ -33,7 +33,6 @@ public class TestSortedLinkedList
 		 expected.add(9);
 		 expected.add(18);
 		 assertEquals(expected ,linkedList.insert(18));
-		//assertTrue(linkedList.insert(13));
 	}
 	
 	@Test
