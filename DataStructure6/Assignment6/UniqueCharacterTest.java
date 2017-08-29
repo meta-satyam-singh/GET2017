@@ -4,7 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class UniqueCharacterTest {
+public class UniqueCharacterTest 
+{
 
 	@Test
 	public void testCountUniqueCharacter() 
