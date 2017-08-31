@@ -1,5 +1,5 @@
 package oop6;
 
 public interface ActionMenu {
-	public void actionTaken();
+	 void actionTaken();
 }
