@@ -14,9 +14,6 @@ public class TestRadixSort
 	int[] array1,array2,array3;
 	int[] sortedArray1;
 
-	/**
-	 * @throws java.lang.Exception
-	 */
 	@Before
 	public void setUp() throws Exception 
 	{
@@ -31,9 +28,6 @@ public class TestRadixSort
 		
 	}
 
-	/**
-	 * Test method for {@link assignment_2.RadixSort#doRadixSort(int[])}.
-	 */
 	@Test
 	public void testDoRadixSort() 
 	{
