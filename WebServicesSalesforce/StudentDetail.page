@@ -1,0 +1,30 @@
+<apex:page controller="StudentDetailsController">
+    <apex:form >
+        
+        <apex:pageBlock >
+            
+            <apex:pageBlockTable value="{! listOfStudents}" var="student">
+                <apex:column value="{!student.Name}"/>
+                <!--<apex:column value="{!$Setup.Url_Settings__c[$Profile.Id].URL__c}"/>
+                -->
+                <apex:column >
+               		<apex:commandButton value="Details" action="{! showDetails}" reRender="details">
+                  	 <apex:param name="studentId" value="{! student.Id}" assignTo="{!studentId}"/>
+               	 	</apex:commandButton>
+               </apex:column>
+                
+            </apex:pageBlockTable>
+            
+        </apex:pageBlock>
+        <apex:outputPanel id="details" >
+        <apex:outputPanel rendered="{! detailButtonClicked}" >
+            Name: <apex:outputField value="{!chosenStudent.Name}"/><br/><br/>
+            Last Name:  <apex:outputField value="{!chosenStudent.LastName__c}"/><br/><br/>
+            Age: <apex:outputField value="{!chosenStudent.Age__c}"/><br/><br/>
+            Wife Name: <apex:outputField value="{!chosenStudent.WifeName__c}"/><br/><br/>
+            Class: <apex:outputField value="{!chosenStudent.Class__r.Name}"/><br/><br/>
+            
+        </apex:outputPanel>
+       </apex:outputPanel> 
+    </apex:form>
+</apex:page>
