@@ -1,5 +1,1 @@
-@isTest
-public class TestStudentInClass 
-{
-	
-}
+
