@@ -1,0 +1,33 @@
+<apex:page standardController="Class__c"  >
+   <script src="/soap/ajax/11.0/connection.js">
+    </script>
+	<script src="/soap/ajax/11.0/apex.js">
+    </script>
+   <script type="text/javascript">
+       sforce.connection.sessionId = '{!$Api.Session_ID}';
+   </script>
+   <script>
+   	function addStudent()
+    {
+           var student = new sforce.SObject('Student__c');
+           student.LastName__c = document.getElementById('{!$Component.form.StudentLastName}').value;
+           student.Name = document.getElementById('{!$Component.form.StudentLastName}').value;
+           student.Class__c = '{!$CurrentPage.parameters.id}';
+           var result = sforce.connection.create([student]);
+           if(result[0].getBoolean('success'))
+           {
+               alert('Student created successfully');
+               window.location.reload();
+           }
+           else
+           {
+               alert('Error : '+result);
+           }
+       }
+   </script>
+   <apex:form id="form">
+       <b>Class Name: </b>{!Class__c.Name}<br/>;
+       <apex:inputText id="StudentLastName" />
+   	<apex:commandButton value="Add Student" onclick="addStudent()"/>
+</apex:form>
+</apex:page>

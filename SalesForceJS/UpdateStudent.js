@@ -1,0 +1,1 @@
+window.location = 'apex/UpdateStudent?id={!Student__c.Id}';
