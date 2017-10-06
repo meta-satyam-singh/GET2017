@@ -1,0 +1,35 @@
+<apex:page standardController="Student__c">
+     <Script>
+	function myfun()
+     {
+    	alert('Hello World');
+     }
+        function popupwindow()
+       {
+           var newwindow = window.open('/apex/StudentNameClass?id='+ '{!student__c.id}', 'Student Name and Class','_blank', 'height=40,width=60, resizble=true, scroll=false');
+       }
+    </Script>
+    
+    <apex:form >
+        <apex:pageBlock title="Student Page">
+            <apex:pageMessages />
+            <apex:pageBlockSection >
+                <apex:inputField value="{! Student__c.Name}"/><br/>
+                <apex:inputField value="{! Student__c.FirstName__c}"/><br/>
+                <apex:inputField value="{! Student__c.LastName__c}"/><br/>  
+                <apex:inputField value="{! Student__c.Email__c}"/><br/>  
+                <apex:inputField value="{! Student__c.DOB__c}"/><br/>    
+                <apex:inputField value="{! Student__c.Class__c}"/><br/> 
+                <apex:inputField value="{! Student__c.Sex__c}"/><br/>   
+                <apex:inputField value="{! Student__c.Married__c}"/><br/>
+                <apex:inputField value="{! Student__c.WifeName__c}"/><br/>
+                
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Save" action="{! save }"/> 
+                <apex:commandButton value="cancel" action="{! cancel }"/>
+                <apex:commandButton value="Summary" onclick="popupwindow()"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>	
+    </apex:form>
+</apex:page>

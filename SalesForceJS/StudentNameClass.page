@@ -1,0 +1,8 @@
+<apex:page standardController="Student__c">
+    <apex:pageBlock >
+        <apex:outputPanel >
+        	Student Name : {!Student__c.Name}
+            Student Class :{!Student__c.Name}
+        </apex:outputPanel>
+    </apex:pageBlock>
+</apex:page>
