@@ -42,7 +42,7 @@ public class ComponentController
         }
         else
         {
-            ApexPages.addmessage(new ApexPages.message(ApexPages.severity.INFO,'Page does not exists,Page starts from 1 and last page number is '+ totalpages));
+            ApexPages.addmessage(new ApexPages.message(ApexPages.severity.INFO,Label.PageNotExist));
         }
     }
     //To execute soql
@@ -61,17 +61,17 @@ public class ComponentController
                 }
                 catch(ListException exp1)
                 {
-                    ApexPages.addmessage(new ApexPages.message(ApexPages.severity.INFO,'No Records found'));
+                    ApexPages.addmessage(new ApexPages.message(ApexPages.severity.INFO,Label.No_Records_found));
                 }
             }
             catch(Exception exp)
             {
-                ApexPages.addmessage(new ApexPages.message(ApexPages.severity.ERROR,'Unknown error parsing query'));
+                ApexPages.addmessage(new ApexPages.message(ApexPages.severity.ERROR,Label.UnknownQuery));
             } 
         }
         else
         {
-            ApexPages.addmessage(new ApexPages.message(ApexPages.severity.WARNING,'Enter query first'));
+            ApexPages.addmessage(new ApexPages.message(ApexPages.severity.WARNING,Label.Enter_Query_First));
         } 
     }
     //To go back to write query
