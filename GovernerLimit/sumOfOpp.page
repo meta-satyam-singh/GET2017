@@ -1,0 +1,18 @@
+<apex:page controller="OppControllerr">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:selectList value="{!selectedAcc}" size="1">
+                    <apex:selectOptions value="{!accs}"/>
+                        <apex:actionSupport event="onchange" action="{!refresh}" reRender="oppList, SumOfOpportunity"/>
+                        </apex:selectList>
+                    <apex:pageBlockTable id="oppList" value="{!myList}" var="o">
+                    	<apex:column value="{!o.opp.Name}"/>
+                        <apex:column value="{!o.opp.Amount}"/>
+                	</apex:pageBlockTable>
+                	<apex:outputText label="Sum Of Opportunities Amount" value="{!sum}" id="SumOfOpportunity" >
+                	</apex:outputText>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
