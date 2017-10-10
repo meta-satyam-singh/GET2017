@@ -50,7 +50,7 @@ public class ComponentController
     {
         queryBlockDisplayPopUp = false;
         queryResultBlockDisplayPopUp = true;
-        if(query!=null && query!='')
+        if(!query.isBlanck())
         {
             try
             {
