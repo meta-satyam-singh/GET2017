@@ -11,7 +11,7 @@ public class OppControllerr
             opps.add(new SelectOption(a.Id, a.Name));
         }
         return opps;
-    }}
+    }
     public PageReference refresh()
     {	
         sum = 0.00;
