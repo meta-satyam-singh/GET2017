@@ -19,11 +19,13 @@ public class TestClassMaxSize
         newStudent2.Class__c = newClass.Id;
         newStudent2.Sex__c = 'Female';
         
-        insert newStudent1;
+        Create a List<Student__c> students = new List<Student__c>();
+        students.add(newStudent1);
+        students.add(newStudent2);
         try
         {
           
-        	insert newStudent2;
+        	insert students;
             System.assert(false, 'should not have been inserted');
         }
         catch(Exception e)
