@@ -2,7 +2,7 @@
 public class TestRecordType 
 {
     @isTest
-    public static void testRecordType()
+    public static void testRecordTypeOfClass()
     {
         Contact con = new Contact();
         con.LastName = 'Singh';
