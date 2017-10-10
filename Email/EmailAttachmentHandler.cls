@@ -4,7 +4,6 @@ global class EmailAttachmentHandler implements Messaging.InboundEmailHandler
    global Messaging.InboundEmailResult handleInboundEmail(Messaging.InboundEmail email,  Messaging.Inboundenvelope envelope) 
    {
        Messaging.InboundEmailResult result = new Messaging.InboundEmailresult();
-       System.debug('1');
        //getting list of attachments from email
        Messaging.InboundEmail.TextAttachment[] attachments = email.textAttachments;
        //Checking for attachment is not null
