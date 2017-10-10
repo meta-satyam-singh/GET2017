@@ -2,7 +2,7 @@
 public class TestNumOfWorkingDays 
 {
    // when date1<date2
-   public static testmethod void testMethod1()
+   public static testmethod void testNumOfWorkingDaysWhenDate1IsLessThanDate2()
    {
        date d1 = date.newInstance(2017, 8, 1);
        date d2 = date.newInstance(2017, 8, 20);
@@ -11,7 +11,7 @@ public class TestNumOfWorkingDays
        System.assertEquals(expected,result);
    }
    // when date1>date2
-   public static testmethod void testMethod2()
+   public static testmethod void testNumOfWorkingDaysWhenDate2IsLessThanDate1()
    {
        date d1 = date.newInstance(2017, 8, 1);
        date d2 = date.newInstance(2017, 7, 20);
