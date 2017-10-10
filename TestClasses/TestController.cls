@@ -1,8 +1,8 @@
 @isTest
-public class TestController 
+private class TestController 
 {
     @isTest
-    public static void testAccount()
+    private static void testAccount()
     {
         Account ac = new Account() ;
         ac.Name = 'testing new account' ;
