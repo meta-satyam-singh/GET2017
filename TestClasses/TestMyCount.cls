@@ -25,8 +25,8 @@ public class TestMyCount
          students.add(newStudent1);
          students.add(newStudent2);
         insert students;
-        List<Class__c> count = [select MyCount__c from Class__c where id =: newClass.Id];
-        Double count1 = (Double)count.get(0).MyCount__c;
+        List<Class__c> counts = [select MyCount__c from Class__c where id =: newClass.Id];
+        Double count1 = (Double)counts.get(0).MyCount__c;
         System.assertEquals(2.0, count1);
     }
 }
