@@ -20,10 +20,11 @@ public class TestMyCount
         newStudent2.LastName__c = 'testLName2';
         newStudent2.Class__c = newClass.Id;
         newStudent2.Sex__c = 'Female';
-        
-        insert newStudent1;
-        insert newStudent2;
-        
+	    
+	 Create a List<Student__c> students = new List<Student__c>();
+         students.add(newStudent1);
+         students.add(newStudent2);
+        insert students;
         List<Class__c> count = [select MyCount__c from Class__c where id =: newClass.Id];
         Double count1 = (Double)count.get(0).MyCount__c;
         System.assertEquals(2.0, count1);
