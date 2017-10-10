@@ -32,9 +32,12 @@ public class TestCostum
        
        OpportunityLineItem oppLine1 = new OpportunityLineItem(OpportunityId = opp1.Id, Quantity = 4, PricebookEntryId = customPrice.Id, TotalPrice = 500);
        OpportunityLineItem oppLine2 = new OpportunityLineItem(OpportunityId = opp2.Id, Quantity = 3, PricebookEntryId = customPrice.Id, TotalPrice = 500);
-       insert oppLine1;
-       insert oppLine2;
+       List<OpportunityLineItem> opLines = new List<OpportunityLineItem>();
+       opLines.add(oppLine1);
+       opLines.add(oppLine2);
+       insert opLines;
    }
+   //As Status Change to Reset the value of OppLineItem Must be get 0
    static testmethod void testOppCustomStatus()
    {
        List<Opportunity> opps = [Select Id, Name, StageName, CloseDate, CustomStatus__c From Opportunity];
@@ -46,7 +49,7 @@ public class TestCostum
            update opp;
        }
        test.stopTest();
-       
+       System.assertEquals(0,opps[0].OpportunityLineItems.Size());
        System.assertEquals(new List<OpportunityLineItem>(), opps[0].OpportunityLineItems);
    }
    
