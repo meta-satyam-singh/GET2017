@@ -4,9 +4,13 @@ public class TestJson
     @isTest
     public static void testJson()
     {
-        String soql = 'SELECT Name FROM Account LIMIT 10';
-        List<Account> acct = Database.Query(soql); 
-        String expected = JSON.serializePretty(acct);
+        List<Account> acc = new List<Account>();
+        for(integer i =0 ; i<10; i++)
+        {
+        	Account a1 = new Account(Name = 'Test'+i);
+            acc.add(a1);
+        }
+        String expected = JSON.serializePretty(acc);
         String output = new ConvertJsonController().parseJson();
         system.assertEquals(expected,output);
     }
