@@ -19,7 +19,7 @@ public class TestClassMaxSize
         newStudent2.Class__c = newClass.Id;
         newStudent2.Sex__c = 'Female';
         
-        Create a List<Student__c> students = new List<Student__c>();
+        List<Student__c> students = new List<Student__c>();
         students.add(newStudent1);
         students.add(newStudent2);
         try
